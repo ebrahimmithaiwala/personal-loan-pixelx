@@ -1,0 +1,60 @@
+﻿<div class="card">
+    <h4 class="card-header">Personal Loan Registration</h4>
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" formControlName="city" class="form-control" />
+                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                    <div *ngIf="f.city.errors.required">City is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="panNumber">PAN Number</label>
+                <input type="text" formControlName="panNumber" class="form-control" />
+                <div *ngIf="submitted && f.panNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.panNumber.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" class="form-control" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="number" formControlName="mobile" class="form-control" />
+                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobile.errors.required">Mobile is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="otp">OTP</label>
+                <input type="number" formControlName="otp" class="form-control" />
+                <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                    <div *ngIf="f.otp.errors.required">OTP is required</div>
+                </div>
+              
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+            </div>
+        </form>
+        <button class="btn btn-primary" (click)="getOtp()">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+           GET OTP
+        </button>
+    </div>
+</div>
